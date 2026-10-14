@@ -12,6 +12,7 @@ def page(fname, title, desc, body):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
 <title>{title} | Global Isolation Survey</title>
 <meta name="description" content="{desc}">
 <link rel="stylesheet" href="css/site.css?v={V}">
