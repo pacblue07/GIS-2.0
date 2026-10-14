@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seismically Isolated Buildings | Global Isolation Survey</title>
+<meta name="description" content="An open map and database of seismically isolated buildings around the world, from the Global Isolation Survey.">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="vendor/markercluster/MarkerCluster.css">
+<link rel="stylesheet" href="vendor/markercluster/MarkerCluster.Default.css">
+<link rel="stylesheet" href="css/site.css?v=3">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="index.html"><img src="assets/gis-wordmark.png" alt="Global Isolation Survey"></a>
+  <nav>
+    <a class="on" href="index.html">Buildings</a>
+    <a href="about.html">About</a>
+    <a href="participate.html">Participate</a>
+    <a href="learn.html">Learn</a>
+    <a href="resources.html">Resources</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+    <h1>Seismically isolated buildings around the world</h1>
+    <p id="summary" class="mute"></p>
+  </section>
+
+  <div class="layout">
+    <aside class="filters" aria-label="Filters">
+      <input id="q" type="search" placeholder="Search name, city, device (e.g. LRB, hospital, Wellington)" aria-label="Search">
+      <div id="facets"></div>
+      <button id="reset" class="link">Clear all filters</button>
+      <p class="note">Prototype. Data: GIS master database, 14 Oct 2026. Locations are city-level.</p>
+    </aside>
+
+    <section class="mapcol">
+      <div class="mapbar">
+        <span id="count"></span>
+        <span class="legend" id="legend"></span>
+      </div>
+      <div id="map" role="region" aria-label="Map of isolated buildings"></div>
+      <div class="timeline" aria-label="Buildings per year">
+        <div class="tlhead"><b>Buildings per year</b> <span class="mute">click a bar for that year, drag across bars for a range</span> <button id="tlclear" class="link" hidden>show all years</button></div>
+        <div id="tl"></div>
+      </div>
+    </section>
+
+    <aside class="places" aria-label="Places">
+      <div class="placeshead"><b>Places</b> <span class="mute">click to filter</span></div>
+      <div id="places"></div>
+    </aside>
+  </div>
+
+  <section class="results">
+    <div class="reshead"><b>Results</b> <span id="rescount" class="mute"></span> <button id="csv" class="link">Download CSV</button></div>
+    <div class="tablewrap"><table id="tbl"><thead></thead><tbody></tbody></table></div>
+  </section>
+</main>
+
+<div id="card" class="card" hidden role="dialog" aria-modal="false" aria-labelledby="cardtitle"></div>
+
+<footer class="foot">
+  <span>© Global Isolation Survey. Information may be freely used with credit to the Global Isolation Survey.</span>
+  <span id="tileattr">Country outlines from Natural Earth.</span>
+</footer>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="vendor/markercluster/leaflet.markercluster.js"></script>
+<script src="data/world.js?v=3"></script>
+<script src="data/buildings.js?v=3"></script>
+<script src="js/app.js?v=3"></script>
+</body>
+</html>
